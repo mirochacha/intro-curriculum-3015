@@ -23,9 +23,15 @@ const server = http
             firstItem: 'ごはん',
             secondItem: 'パン'
           }));
+        } else if (req.url === '/enquetes/sushi-pizza') {
+          res.write(pug.renderFile('./form.pug', {
+            path: req.url,
+            firstItem: '寿司',
+            secondItem: 'ピザ'
+          }));
         }
-        res.end();
-        break;
+          res.end();
+          break;
       case 'POST':
         let rawData = '';
         req
